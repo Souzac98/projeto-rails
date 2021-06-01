@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Bem vindo á area de projetos, <%=current_sign_up.email%>.</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome do projeto | </th>
+      <th>Servico prestado | </th>
+      <th>Responsavel pelo projeto | </th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @projects.each do |project| %>
+      <tr>
+        <td><%= project.nome %></td>
+        <td><%= project.servico %></td>
+        <td><%= project.responsavel %></td>
+        <td><%= link_to 'Mostrar', project %></td>
+        <td><%= link_to 'Editar', edit_project_path(project) %></td>
+        <td><%= link_to 'Deletar', project, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+<p>
+Para criar um novo projeto, clique no link abaixo: 
+</p>
+
+<li>
+<%= link_to 'Novo projeto.', new_project_path %>
+</li>
+
+<% if sign_up_signed_in? == true %>
+
+<p> Para se desconectar, clique em "Logoff" logo abaixo:</p>
+<li>
+    <%= link_to "Logoff.", destroy_sign_up_session_path, method: :delete %>
+</li>
+
+<% end %>

@@ -1,0 +1,39 @@
+<% if sign_up_signed_in? == true %>
+
+<h1>Bem vindo, <%= current_sign_up.email %>!</h1>
+<p><strong>Data:</strong> <%= data_br(Date.today) %></p>
+
+<p>
+Para acessara a área de Controle dos projetos, clique no link abaixo: 
+</p>
+<li>
+    <%= link_to "Área de Controle.", projects_path %>
+</li>
+
+<p> Para se desconectar, clique em "Logoff" logo abaixo:</p>
+<li>
+    <%= link_to "Logoff.", destroy_sign_up_session_path, method: :delete %>
+</li>
+
+<% else %>
+
+<h1>Bem vindo, 
+<p><strong>Data:</strong> <%= data_br(Date.today) %></p>
+
+<p> 
+Caso não tenha um cadastro, acesse "Novo Cadastro." logo abaixo:
+</p>
+<li>
+    <%= link_to "Novo Cadastro.", new_sign_up_registration_path %>
+
+<p>
+Para acessar a área de login, clique no link abaixo:
+</p>
+<li>
+    <%= link_to "Login.", new_sign_up_session_path %> 
+</li>
+<% end %>
+
+
+
+
