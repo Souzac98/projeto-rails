@@ -1,25 +1,43 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Versão do Ruby:  
+ 
+ Ruby 3.0.1p64
+ 
+* Versão do Rails: 
 
-Things you may want to cover:
+  Rails 6.1.3.2
 
-* Ruby version
+* Descrição:
 
-* System dependencies
+ Aplicação com função de registro / login / logoff de usuário e posterior acesso a área de criação / edição e exclusão de projetos.
+ A autenticação impede que o usuário acesse os dados dos projetos sem ter realizado um login antes.
 
-* Configuration
+* Deploy da aplicação: 
 
-* Database creation
+https://projeto-rails-caio.herokuapp.com/projects
 
-* Database initialization
+* Requisitos: 
 
-* How to run the test suite
+gem 'devise'
 
-* Services (job queues, cache servers, search engines, etc.)
+gem 'rails-i18n', '~> 6.0.0'
 
-* Deployment instructions
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 * ...
 # projeto-rails
